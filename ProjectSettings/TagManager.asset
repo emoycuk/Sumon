@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Ground
+  - Wall
+>>>>>>> 3297741abc336c22d3151b2238c0f23c72d93722
   layers:
   - Default
   - TransparentFX
@@ -41,11 +47,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: platform
     uniqueID: 349732477
     locked: 0
   - name: playe
     uniqueID: 1387934109
     locked: 0
+=======
+>>>>>>> 3297741abc336c22d3151b2238c0f23c72d93722
   m_RenderingLayers:
   - Default
