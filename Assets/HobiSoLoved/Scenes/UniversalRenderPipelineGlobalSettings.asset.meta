@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2f45f3d7ef1c1ca4a9b7632a8e99f907
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 294187
+  packageName: 2D Platformer - Lovely Forest
+  packageVersion: 1.0
+  assetPath: Assets/HobiSoLoved/Scenes/UniversalRenderPipelineGlobalSettings.asset
+  uploadId: 687005
