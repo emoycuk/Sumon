@@ -9,6 +9,7 @@ public class Player2Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
+    private Animator anim;
     public int hp = 100;
     public int deathCount = 0;
 
@@ -21,6 +22,7 @@ public class Player2Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -48,6 +50,8 @@ public class Player2Movement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
+        //Set animator params
+        anim.SetBool("p2walk", moveInput != 0);
         if (isDead())
         {
             Respawn();
