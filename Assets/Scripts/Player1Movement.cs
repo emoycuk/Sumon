@@ -11,7 +11,8 @@ public class Player1Movement : MonoBehaviour
     private bool isGrounded = false;
     private Animator anim;
 
-    
+    public int hp = 100;
+    public int deathCount = 0;
 
     [Header("Respawn Settings")]
     [Tooltip("The Transform where the player should respawn.")]
@@ -23,7 +24,7 @@ public class Player1Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         //animator
-    anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -45,7 +46,7 @@ public class Player1Movement : MonoBehaviour
         // Apply horizontal velocity
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // Jump with UP arrow if grounded
+        // Jump with W if grounded
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -53,6 +54,11 @@ public class Player1Movement : MonoBehaviour
 
         //Set animator params
         anim.SetBool("walk", moveInput != 0);
+
+        if (isDead())
+        {
+            Respawn();
+        }
     }
 
     // BASIC COLLISION CHECKS
@@ -66,6 +72,15 @@ public class Player1Movement : MonoBehaviour
         {
             Respawn();
             isGrounded = false;
+        }
+        if (collision.gameObject.CompareTag("Attack"))
+        {
+            takeDmg(20);  // Adjust damage as needed
+                              // Optional: Check if the player is dead and handle accordingly
+            if (isDead())
+            {
+                Respawn();
+            }
         }
     }
 
@@ -94,11 +109,34 @@ public class Player1Movement : MonoBehaviour
     {
         // Move the player to the respawn position
         transform.position = respawnPoint.position;
+        hp = 100;
         isGrounded = true;
+
+        // Reset health (if desired) when respawning
+        // hp = 100; 
+
+        deathCount++;
     }
 
     public bool canAttack()
     {
         return true;
+    }
+
+    public void takeDmg(int dmg)
+    {
+        if (dmg > hp)
+        {
+            hp = 0;
+        }
+        else
+        {
+            hp = hp - dmg;
+        }
+    }
+
+    public bool isDead()
+    {
+        return (hp <= 0);
     }
 }

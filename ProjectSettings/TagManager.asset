@@ -9,6 +9,7 @@ TagManager:
   - ORBSPAWN
   - Player1
   - Player2
+  - Attack
   layers:
   - Default
   - TransparentFX
