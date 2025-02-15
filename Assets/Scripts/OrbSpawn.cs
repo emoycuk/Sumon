@@ -1,33 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OrbSpawner : MonoBehaviour
 {
-    public GameObject[] orbPrefabs; // Sad, Joy, Anger prefabları
-    public Transform[] spawnPoints; // Tileset noktaları
-    public float spawnInterval = 5f; // 5 saniyede bir spawn
+    public GameObject[] orbPrefabs; // 3 farklı orb prefab
+    public Transform[] spawnPoints; // Spawn noktaları
 
-    void Start()
+    private void Start()
     {
-        StartCoroutine(SpawnOrbs());
+        if (spawnPoints.Length == 0)
+        {
+            Debug.LogError("❌ Spawn noktaları atanmadı!");
+            return;
+        }
+
+        SpawnOrbs(3); // İlk başta 3 orb spawn et
     }
 
-    IEnumerator SpawnOrbs()
+    void SpawnOrbs(int orbCount)
     {
-        while (true)
+        Debug.Log("✅ SpawnOrbs() çağrıldı!"); 
+
+        for (int i = 0; i < orbCount; i++)
         {
-            yield return new WaitForSeconds(spawnInterval);
+            if (spawnPoints.Length == 0) return;
+
+            Transform spawnPoint = GetRandomSpawnPoint();
+
+            if (spawnPoint == null) return;
+
+            int orbTypeIndex = Random.Range(0, orbPrefabs.Length);
+            GameObject newOrb = Instantiate(orbPrefabs[orbTypeIndex], spawnPoint.position, Quaternion.identity);
+            newOrb.transform.position = new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0);
+            newOrb.SetActive(true);
             
-            // Rastgele bir tileset noktası seç
-            Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-
-            // Rastgele bir Orb türü seç
-            GameObject randomOrb = orbPrefabs[Random.Range(0, orbPrefabs.Length)];
-
-            // Orb'u sahneye yerleştir
-            Instantiate(randomOrb, randomSpawnPoint.position, Quaternion.identity);
+            Debug.Log("✅ Yeni Orb spawn oldu: " + newOrb.transform.position);
         }
     }
-}
 
+    public Transform GetRandomSpawnPoint()
+    {
+        if (spawnPoints.Length == 0)
+        {
+            Debug.LogError("❌ Spawn noktaları atanmadı!");
+            return null;
+        }
+
+        int randomIndex = Random.Range(0, spawnPoints.Length);
+        return spawnPoints[randomIndex];
+    }
+}
