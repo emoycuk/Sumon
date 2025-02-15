@@ -9,12 +9,9 @@ public class Player2Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
-<<<<<<< HEAD
     private Animator anim;
-=======
     public int hp = 100;
     public int deathCount = 0;
->>>>>>> 67f836264682d2b225d1b3f7f7bce07a92716e50
 
     [Header("Respawn Settings")]
     [Tooltip("The Transform where the player should respawn.")]
