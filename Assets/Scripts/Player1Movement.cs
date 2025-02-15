@@ -9,6 +9,9 @@ public class Player1Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
+    private Animator anim;
+
+    
 
     [Header("Respawn Settings")]
     [Tooltip("The Transform where the player should respawn.")]
@@ -19,6 +22,8 @@ public class Player1Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //animator
+    anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -45,6 +50,9 @@ public class Player1Movement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        //Set animator params
+        anim.SetBool("walk", moveInput != 0);
     }
 
     // BASIC COLLISION CHECKS
