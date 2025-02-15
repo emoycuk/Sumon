@@ -23,7 +23,7 @@ public class Orb : MonoBehaviour
             }
 
             Debug.Log("❌ " + currentOrbType + " Orb alındı!"); 
-            StartCoroutine(RespawnOrb()); // Respawn işlemini başlat
+            StartCoroutine(RespawnOrb()); 
         }
     }
 
