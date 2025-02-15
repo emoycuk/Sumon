@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class Player1Attack : MonoBehaviour
 {
+    [Header("Settings")]
+    [SerializeField] private float attackCooldown = 1f;  // time between attacks
 
-    [SerializeField] private float attackCooldown;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private GameObject[] fireballs;
+    [Header("References")]
+    [SerializeField] private Transform firePoint;        // where the projectile spawns
+    [SerializeField] private GameObject[] fireballs;     // array of pooled fireballs
 
     private Animator anim;
     private Player1Movement playerMovement;
@@ -19,32 +21,54 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
+        // If you want one shot per click, use GetMouseButtonDown.
+        // If you want continuous shooting, use GetMouseButton.
+        if (Input.GetKeyDown(KeyCode.F) && cooldownTimer > attackCooldown && playerMovement.canAttack())
+        {
             Attack();
+        }
 
         cooldownTimer += Time.deltaTime;
     }
 
     private void Attack()
-{
-    // Uncomment the animator trigger if needed
-    // anim.SetTrigger("p1attack");
-    cooldownTimer = 0;
+    {
+        // Optionally trigger an animation
+        anim.SetTrigger("p1attack");
 
-    int fireballIndex = FindFireball();
-    fireballs[fireballIndex].transform.position = firePoint.position;
-    fireballs[fireballIndex].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
-}
+        // Reset cooldown
+        cooldownTimer = 0f;
+
+        // Find an inactive fireball in the pool
+        int fireballIndex = FindFireball();
+        if (fireballIndex < 0)
+        {
+            // No available fireball in the pool
+            return;
+        }
+
+        // Position and activate the fireball
+        GameObject fireball = fireballs[fireballIndex];
+        float dir = Mathf.Sign(transform.localScale.x);
+        float offsetDistance = 0.5f;
+        fireball.transform.position = firePoint.position + Vector3.right * offsetDistance * dir;
+        fireball.SetActive(true);
+
+        // Send direction to the projectile (assumes Projectile script handles movement)
+        float direction = Mathf.Sign(transform.localScale.x); // 1 if facing right, -1 if facing left
+        fireball.GetComponent<Projectile>().SetDirection(direction);
+    }
 
     private int FindFireball()
     {
+        // Returns the index of the first inactive fireball in the pool, or -1 if none are available
         for (int i = 0; i < fireballs.Length; i++)
         {
             if (!fireballs[i].activeInHierarchy)
+            {
                 return i;
+            }
         }
-        return 0;
+        return -1;
     }
-
-
 }
