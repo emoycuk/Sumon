@@ -57,4 +57,9 @@ public class Player1Movement : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    public bool canAttack()
+    {
+        return true;
+    }
 }
