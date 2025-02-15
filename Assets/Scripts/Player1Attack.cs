@@ -34,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         // Optionally trigger an animation
-        // anim.SetTrigger("p1attack");
+        anim.SetTrigger("p1attack");
 
         // Reset cooldown
         cooldownTimer = 0f;
