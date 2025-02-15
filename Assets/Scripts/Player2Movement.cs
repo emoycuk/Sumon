@@ -10,6 +10,12 @@ public class Player2Movement : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded = false;
 
+    [Header("Respawn Settings")]
+    [Tooltip("The Transform where the player should respawn.")]
+    public Transform respawnPoint;
+
+    private bool isInvincible = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -48,6 +54,11 @@ public class Player2Movement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("DeathZone"))
+        {
+            Respawn();
+            isGrounded = false;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -56,5 +67,24 @@ public class Player2Movement : MonoBehaviour
         {
             isGrounded = false;
         }
+        if (collision.gameObject.CompareTag("DeathZone"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if we've collided with the DeathZone
+        if (other.CompareTag("DeathZone"))
+        {
+            Respawn();
+        }
+    }
+
+    private void Respawn()
+    {
+        // Move the player to the respawn position
+        transform.position = respawnPoint.position;
     }
 }
