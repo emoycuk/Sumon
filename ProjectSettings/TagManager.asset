@@ -3,19 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-
-=======
   tags:
   - Ground
   - DeathZone
-
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  
-  - 1
-
+  - 
   - Water
   - UI
   - 
@@ -48,11 +43,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
-=======
-  - name: Foreground
-    uniqueID: 9589193
+  - name: New Layer 1
+    uniqueID: 1067987685
     locked: 0
->>>>>>> 324f737d12b8cf9c1804516aa7afd0547be0c957
+  - name: New Layer 2
+    uniqueID: 516856745
+    locked: 0
   m_RenderingLayers:
   - Default

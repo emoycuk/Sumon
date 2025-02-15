@@ -26,13 +26,16 @@ public class PlayerAttack : MonoBehaviour
     }
 
     private void Attack()
-    {
-        anim.SetTrigger("attack");
-        cooldownTimer = 0;
+{
+    // Uncomment the animator trigger if needed
+    // anim.SetTrigger("p1attack");
+    cooldownTimer = 0;
 
-        fireballs[FindFireball()].transform.position = firePoint.position;
-        fireballs[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
-    }
+    int fireballIndex = FindFireball();
+    fireballs[fireballIndex].transform.position = firePoint.position;
+    fireballs[fireballIndex].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+}
+
     private int FindFireball()
     {
         for (int i = 0; i < fireballs.Length; i++)
@@ -43,6 +46,5 @@ public class PlayerAttack : MonoBehaviour
         return 0;
     }
 
-    
 
 }
