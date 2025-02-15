@@ -20,8 +20,16 @@ public class Player2Movement : MonoBehaviour
         float moveInput = 0f;
 
         // --- ARROW KEYS ONLY ---
-        if (Input.GetKey(KeyCode.LeftArrow)) moveInput = -1f;
-        else if (Input.GetKey(KeyCode.RightArrow)) moveInput = 1f;
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            moveInput = -1f;
+            transform.localScale = new Vector2(0.7f, 0.7f);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            moveInput = 1f;
+            transform.localScale = new Vector2(-0.7f, 0.7f);
+        }
 
         // Apply horizontal velocity
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);

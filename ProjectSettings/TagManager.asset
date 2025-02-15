@@ -3,12 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Ground
+>>>>>>> 5b3cea391354f6c9f5dff6427e2aa6e0f8a297f1
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - 
+=======
+  - 1
+>>>>>>> 5b3cea391354f6c9f5dff6427e2aa6e0f8a297f1
   - Water
   - UI
   - 
@@ -41,8 +50,13 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
   - name: New Layer 1
     uniqueID: 4292818901
+=======
+  - name: Foreground
+    uniqueID: 9589193
+>>>>>>> 5b3cea391354f6c9f5dff6427e2aa6e0f8a297f1
     locked: 0
   m_RenderingLayers:
   - Default

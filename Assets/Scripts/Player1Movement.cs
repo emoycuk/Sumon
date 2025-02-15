@@ -19,14 +19,22 @@ public class Player1Movement : MonoBehaviour
     {
         float moveInput = 0f;
 
-        // --- WASD ---
-        if (Input.GetKey(KeyCode.A)) moveInput = -1f;
-        else if (Input.GetKey(KeyCode.D)) moveInput = 1f;
+        // --- ARROW KEYS ONLY ---
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveInput = -1f;
+            transform.localScale = new Vector2(-0.7f, 0.7f);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            moveInput = 1f;
+            transform.localScale = new Vector2(0.7f, 0.7f);
+        }
 
         // Apply horizontal velocity
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // Jump with W if grounded
+        // Jump with UP arrow if grounded
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
