@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class Player1Attack : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float attackCooldown = 1f;  // time between attacks
@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     {
         // If you want one shot per click, use GetMouseButtonDown.
         // If you want continuous shooting, use GetMouseButton.
-        if (Input.GetMouseButtonDown(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
+        if (Input.GetKeyDown(KeyCode.F) && cooldownTimer > attackCooldown && playerMovement.canAttack())
         {
             Attack();
         }
