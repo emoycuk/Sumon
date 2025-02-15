@@ -94,6 +94,7 @@ public class Player1Movement : MonoBehaviour
     {
         // Move the player to the respawn position
         transform.position = respawnPoint.position;
+        isGrounded = true;
     }
 
     public bool canAttack()
