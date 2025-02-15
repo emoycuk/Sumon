@@ -16,31 +16,49 @@ public class Orb : MonoBehaviour
     {
         Debug.Log("Trigger Çalıştı! " + other.name); // **Bu çalışıyor mu kontrol et**
         
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1"))
         {
             Debug.Log("✅ " + currentOrbType + " Orb alındı!");
 
             StartCoroutine(RespawnOrb()); 
         }
+        if (other.CompareTag("Player2"))
+        {
+            Debug.Log("✅ " + currentOrbType + " Orb alındı!");
+
+            StartCoroutine(RespawnOrb());
+        }
     }
 
     IEnumerator RespawnOrb()
-    {
-        Debug.Log("⏳ Orb kayboluyor ve 5 saniye bekliyor...");
-        GetComponent<SpriteRenderer>().enabled = false;
-        
-        if (spawner != null)
-        {
-            Transform newSpawnPoint = spawner.GetRandomSpawnPoint(); // Yeni spawn noktcurrentOrbType = spawner.orbPrefabs[Random.Range(0, spawner.orbPrefabs.Length)];ası al
-            GameObject newOrbPrefab = spawner.orbPrefabs[Random.Range(0, spawner.orbPrefabs.Length)];
-            Orb newOrbScript = newOrbPrefab.GetComponent<Orb>();
-            currentOrbType = newOrbScript.currentOrbType;
-            transform.position = newSpawnPoint.position; // Orb’u yeni konuma taşı
-            Debug.Log("🔄 Yeni Orb şu noktada spawn oldu: " + transform.position + currentOrbType);
-        }
+{
+    Debug.Log("⏳ Orb kayboluyor ve 5 saniye bekliyor...");
 
-        yield return new WaitForSeconds(5f); // 5 saniye bekle
-        GetComponent<SpriteRenderer>().enabled = true; 
-        Debug.Log("✅ Orb tekrar aktif oldu!");
+    // Hide the current orb before respawning
+    GetComponent<SpriteRenderer>().enabled = false;
+    GetComponent<Collider2D>().enabled = false; // Optional: Disable collision to prevent interactions
+
+    yield return new WaitForSeconds(5f); // Wait for 5 seconds before respawning
+
+    if (spawner != null)
+    {
+        // Get a new random spawn point
+        Transform newSpawnPoint = spawner.GetRandomSpawnPoint(); 
+
+        // Pick a new random orb prefab
+        GameObject newOrbPrefab = spawner.orbPrefabs[Random.Range(0, spawner.orbPrefabs.Length)];
+
+        // Destroy the current orb and spawn a new one
+        GameObject newOrb = Instantiate(newOrbPrefab, newSpawnPoint.position, Quaternion.identity);
+
+        // Set the correct orb type
+        Orb newOrbScript = newOrb.GetComponent<Orb>();
+        currentOrbType = newOrbScript.currentOrbType;
+
+        Debug.Log("🔄 Yeni Orb şu noktada spawn oldu: " + newSpawnPoint.position + " Type: " + currentOrbType);
+
+        // Destroy the old orb (this script is on the old orb)
+        Destroy(gameObject);
     }
+}
 }
