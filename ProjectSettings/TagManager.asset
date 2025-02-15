@@ -3,18 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< HEAD
   tags:
   - Ground
-  - Wall
-=======
-  tags: []
->>>>>>> 89897c8 (UwU)
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 
@@ -44,19 +39,8 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: New Layer 1
-    uniqueID: 2689037135
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-<<<<<<< HEAD
-  - name: New Layer 1
-    uniqueID: 3285456647
-=======
-  - name: New Layer 2
-    uniqueID: 1361068049
->>>>>>> 89897c8 (UwU)
     locked: 0
   m_RenderingLayers:
   - Default
