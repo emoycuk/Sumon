@@ -23,7 +23,7 @@ public class Player2Attack : MonoBehaviour
     {
         // If you want one shot per click, use GetMouseButtonDown.
         // If you want continuous shooting, use GetMouseButton.
-        if (Input.GetKeyDown(KeyCode.Keypad0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
+        if (Input.GetKeyDown(KeyCode.O) && cooldownTimer > attackCooldown && playerMovement.canAttack())
         {
             Attack();
         }
