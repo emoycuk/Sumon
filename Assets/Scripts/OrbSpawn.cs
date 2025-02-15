@@ -21,7 +21,7 @@ public class OrbSpawner : MonoBehaviour
         }
 
         // Spawn the initial orbs
-        SpawnOrbs(3);
+        SpawnOrbs(8);
     }
 
     private void SpawnOrbs(int orbCount)

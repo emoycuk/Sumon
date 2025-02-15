@@ -9,6 +9,8 @@ public class Player2Movement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
+    public int hp = 100;
+    public int deathCount = 0;
 
     [Header("Respawn Settings")]
     [Tooltip("The Transform where the player should respawn.")]
@@ -45,6 +47,11 @@ public class Player2Movement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        if (isDead())
+        {
+            Respawn();
+        }
     }
 
     // BASIC COLLISION CHECKS
@@ -58,6 +65,15 @@ public class Player2Movement : MonoBehaviour
         {
             Respawn();
             isGrounded = false;
+        }
+        if (collision.gameObject.CompareTag("Attack"))
+        {
+            takeDmg(20);  // Adjust damage as needed
+                          // Optional: Check if the player is dead and handle accordingly
+            if (isDead())
+            {
+                Respawn();
+            }
         }
     }
 
@@ -86,10 +102,32 @@ public class Player2Movement : MonoBehaviour
     {
         // Move the player to the respawn position
         transform.position = respawnPoint.position;
+        hp = 100;
+        isGrounded = true;
+
+        // Reset health (if desired) when respawning
+        // hp = 100; 
+        deathCount++;
     }
 
     public bool canAttack()
     {
         return true;
+    }
+
+    public void takeDmg(int dmg)
+    {
+        if (dmg > hp)
+        {
+            hp = 0;
+            return;
+        }
+
+        hp = hp - dmg;
+    }
+
+    public bool isDead()
+    {
+        return (hp <= 0);
     }
 }

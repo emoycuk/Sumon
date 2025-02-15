@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 125191133}
   m_Layer: 0
   m_Name: ball (7)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,6 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &125191137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -740,7 +741,7 @@ GameObject:
   - component: {fileID: 185819878}
   m_Layer: 0
   m_Name: ball (8)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -868,6 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &185819882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -939,7 +941,7 @@ GameObject:
   - component: {fileID: 187686050}
   m_Layer: 0
   m_Name: ball (4)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1067,6 +1069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &187686054
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2172,7 +2175,7 @@ GameObject:
   - component: {fileID: 384653075}
   m_Layer: 0
   m_Name: ball
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2285,6 +2288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &384653079
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2371,7 +2375,7 @@ GameObject:
   - component: {fileID: 441087295}
   m_Layer: 0
   m_Name: ball
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2498,7 +2502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de79fa05c91e49ceadb5fbfaa4362f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
+  dmg: 20
 --- !u!212 &441087299
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2732,7 +2737,7 @@ GameObject:
   - component: {fileID: 465279347}
   m_Layer: 0
   m_Name: ball (5)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2860,6 +2865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &465279351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2981,6 +2987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   jumpForce: 12
+  hp: 100
   respawnPoint: {fileID: 64862539}
 --- !u!50 &469206533
 Rigidbody2D:
@@ -3050,8 +3057,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1802038029
-  m_SortingLayer: 0
+  m_SortingLayerID: 516856745
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -4646698770154453813, guid: c3bfa3605a3ba29448b508857b775ed0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3940,7 +3947,7 @@ GameObject:
   - component: {fileID: 544964281}
   m_Layer: 0
   m_Name: ball (9)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4068,6 +4075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &544964285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4861,7 +4869,7 @@ GameObject:
   - component: {fileID: 683809497}
   m_Layer: 0
   m_Name: ball (2)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4989,6 +4997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &683809501
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5160,7 +5169,7 @@ GameObject:
   - component: {fileID: 730542525}
   m_Layer: 0
   m_Name: ball (5)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5288,6 +5297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &730542529
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5359,7 +5369,7 @@ GameObject:
   - component: {fileID: 802139646}
   m_Layer: 0
   m_Name: ball (4)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5487,6 +5497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &802139650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6602,7 +6613,7 @@ GameObject:
   - component: {fileID: 905378758}
   m_Layer: 0
   m_Name: ball (6)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6730,6 +6741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &905378762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7218,7 +7230,7 @@ GameObject:
   - component: {fileID: 1000404864}
   m_Layer: 0
   m_Name: ball (1)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7346,6 +7358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &1000404868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7610,7 +7623,7 @@ GameObject:
   - component: {fileID: 1047674503}
   m_Layer: 0
   m_Name: ball (3)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7738,6 +7751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &1047674507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9177,7 +9191,7 @@ GameObject:
   - component: {fileID: 1238630680}
   m_Layer: 0
   m_Name: ball (2)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9305,6 +9319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &1238630684
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9538,7 +9553,7 @@ GameObject:
   - component: {fileID: 1274997624}
   m_Layer: 0
   m_Name: ball (3)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9666,6 +9681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &1274997628
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10658,6 +10674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   jumpForce: 12
+  hp: 100
   respawnPoint: {fileID: 1878932897}
 --- !u!50 &1572302359
 Rigidbody2D:
@@ -10727,8 +10744,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1802038029
-  m_SortingLayer: 0
+  m_SortingLayerID: 516856745
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1090217281897295437, guid: ef0dfc8af9a88d748af87b62a9a6dbc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10886,7 +10903,7 @@ GameObject:
   - component: {fileID: 1615781131}
   m_Layer: 0
   m_Name: ball (6)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11014,6 +11031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &1615781135
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11633,7 +11651,7 @@ GameObject:
   - component: {fileID: 1869967025}
   m_Layer: 0
   m_Name: ball (1)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11761,6 +11779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &1869967029
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11863,7 +11882,7 @@ GameObject:
   - component: {fileID: 1898102503}
   m_Layer: 0
   m_Name: ball (7)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11991,6 +12010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &1898102507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12903,7 +12923,7 @@ GameObject:
   - component: {fileID: 2023542784}
   m_Layer: 0
   m_Name: ball (9)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13031,6 +13051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &2023542788
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13102,7 +13123,7 @@ GameObject:
   - component: {fileID: 2035261937}
   m_Layer: 0
   m_Name: ball (8)
-  m_TagString: Untagged
+  m_TagString: Attack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13230,6 +13251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
+  dmg: 20
 --- !u!212 &2035261941
 SpriteRenderer:
   m_ObjectHideFlags: 0
