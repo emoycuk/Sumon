@@ -7,9 +7,13 @@ public class Player1Movement : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
+    public float timer = 0f;
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
+    private bool isSlowed = false;
+    private bool isInverted = false;
+
     private Animator anim;
 
     public int hp = 100;
@@ -36,6 +40,19 @@ public class Player1Movement : MonoBehaviour
     void Update()
     {
         float moveInput = 0f;
+
+        if (isSlowed)
+        {
+            moveSpeed = 2f;
+            timer++;
+
+            if (timer > 5)
+            {
+                moveSpeed = 5f;
+                isSlowed = false;
+                timer = 0f;
+            }
+        }
 
         // --- ARROW KEYS ONLY ---
         if (Input.GetKey(KeyCode.A))
@@ -88,6 +105,14 @@ public class Player1Movement : MonoBehaviour
                 Respawn();
             }
         }
+        if (collision.gameObject.CompareTag("Slow"))
+        {
+            isSlowed = true;
+        }
+        if (collision.gameObject.CompareTag("Invert"))
+        {
+            isInverted = true;
+        }   
     }
 
     private void OnCollisionExit2D(Collision2D collision)
