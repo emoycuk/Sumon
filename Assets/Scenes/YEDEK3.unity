@@ -11586,6 +11586,8 @@ RectTransform:
   m_Children:
   - {fileID: 335524664}
   - {fileID: 216185483}
+  - {fileID: 1327814566}
+  - {fileID: 1409665599}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -16082,7 +16084,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.48595372, y: 0.44242162}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!1 &1346842463
+=======
+--- !u!1 &1327814565
+>>>>>>> 2feae9dc03d1d29451db66cb37505b3dd7665178
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16090,6 +16096,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1346842464}
   - component: {fileID: 1346842469}
   - component: {fileID: 1346842468}
@@ -16105,10 +16112,25 @@ GameObject:
   m_IsActive: 0
 --- !u!4 &1346842464
 Transform:
+=======
+  - component: {fileID: 1327814566}
+  - component: {fileID: 1327814568}
+  - component: {fileID: 1327814567}
+  m_Layer: 5
+  m_Name: p1orbui
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1327814566
+RectTransform:
+>>>>>>> 2feae9dc03d1d29451db66cb37505b3dd7665178
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1346842463}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -16214,11 +16236,28 @@ BoxCollider2D:
   m_Size: {x: 0.75, y: 0.4}
   m_EdgeRadius: 0
 --- !u!114 &1346842468
+=======
+  m_GameObject: {fileID: 1327814565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 909419697}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -600, y: -500}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1327814567
+>>>>>>> 2feae9dc03d1d29451db66cb37505b3dd7665178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1346842463}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -16482,6 +16521,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+=======
+  m_GameObject: {fileID: 1327814565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1327814568
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327814565}
+  m_CullTransparentMesh: 1
+>>>>>>> 2feae9dc03d1d29451db66cb37505b3dd7665178
 --- !u!1 &1359661070
 GameObject:
   m_ObjectHideFlags: 0
@@ -16806,6 +16879,81 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4797734, y: 0.41368604}
   m_EdgeRadius: 0
+--- !u!1 &1409665598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1409665599}
+  - component: {fileID: 1409665601}
+  - component: {fileID: 1409665600}
+  m_Layer: 5
+  m_Name: p2orbui
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1409665599
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409665598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 909419697}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 600, y: -500}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1409665600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409665598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1409665601
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409665598}
+  m_CullTransparentMesh: 1
 --- !u!1 &1421701894
 GameObject:
   m_ObjectHideFlags: 0
@@ -17924,6 +18072,10 @@ MonoBehaviour:
   lastOrb: 1
   secondLastOrb: 1
   respawnPoint: {fileID: 1878932897}
+  playerOrbUI: {fileID: 1327814567}
+  joyOrbSprite: {fileID: 3798165119653196650, guid: 17a3c42b6210e44219557bf5a8558731, type: 3}
+  angerOrbSprite: {fileID: -9082789242079819192, guid: f0c8b2490c6284985ad53c408a4a9ba6, type: 3}
+  sadOrbSprite: {fileID: -4597436970944649126, guid: 3683fae219d1a449195f4213e50a74a7, type: 3}
 --- !u!50 &1572302359
 Rigidbody2D:
   serializedVersion: 5
