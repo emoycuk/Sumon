@@ -75,8 +75,8 @@ public class Player2Movement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Attack"))
         {
-            takeDmg(20);  // Adjust damage as needed
-                          // Optional: Check if the player is dead and handle accordingly
+            takeDmg(20);  
+
             if (isDead())
             {
                 Respawn();

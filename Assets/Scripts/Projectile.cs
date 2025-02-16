@@ -29,6 +29,9 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Ground")) return; // Ignore ground
         if (collision.CompareTag("Attack")) return; // Ignore other attacks
+        if (collision.CompareTag("AngerOrb")) return;
+        if (collision.CompareTag("SmileOrb")) return;
+        if (collision.CompareTag("SadOrb")) return;
 
         if (collision.CompareTag("Player1")) // Check for player collision
         {
