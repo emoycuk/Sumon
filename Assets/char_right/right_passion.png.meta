@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      right_passion_0: 644440373009888508
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
