@@ -16,6 +16,9 @@ TagManager:
   - GameManager
   - OptionsCanvas
   - MainMenuCanvas
+  - NormalAttack
+  - Slow
+  - Invert
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,9 @@ public class Player2Attack : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Transform firePoint;        // where the projectile spawns
-    [SerializeField] private GameObject[] fireballs;     // array of pooled fireballs
+    [SerializeField] private GameObject[] fireballs1;
+    [SerializeField] private GameObject[] fireballs2;
+    [SerializeField] private GameObject[] fireballs3;
 
     private Animator anim;
     private Player2Movement playerMovement;
@@ -21,6 +23,8 @@ public class Player2Attack : MonoBehaviour
 
     private void Update()
     {
+        Orb.OrbType lastOrb = playerMovement.lastOrb;
+        Orb.OrbType secondLastOrb = playerMovement.secondLastOrb;
         // If you want one shot per click, use GetMouseButtonDown.
         // If you want continuous shooting, use GetMouseButton.
         if (Input.GetKeyDown(KeyCode.O) && cooldownTimer > attackCooldown && playerMovement.canAttack())
@@ -33,8 +37,6 @@ public class Player2Attack : MonoBehaviour
 
     private void Attack()
     {
-        Orb.OrbType lastOrb = playerMovement.lastOrb;
-        Orb.OrbType secondLastOrb = playerMovement.secondLastOrb;
         // Optionally trigger an animation
         anim.SetTrigger("p2attack");
 
@@ -50,7 +52,7 @@ public class Player2Attack : MonoBehaviour
         }
 
         // Position and activate the fireball
-        GameObject fireball = fireballs[fireballIndex];
+        GameObject fireball = fireballs1[fireballIndex];
         float dir = -Mathf.Sign(transform.localScale.x);       // Note the minus sign
         float offsetDistance = 0.5f;
         fireball.transform.position = firePoint.position + Vector3.right * offsetDistance * dir;
@@ -64,9 +66,9 @@ public class Player2Attack : MonoBehaviour
     private int FindFireball()
     {
         // Returns the index of the first inactive fireball in the pool, or -1 if none are available
-        for (int i = 0; i < fireballs.Length; i++)
+        for (int i = 0; i < fireballs1.Length; i++)
         {
-            if (!fireballs[i].activeInHierarchy)
+            if (!fireballs1[i].activeInHierarchy)
             {
                 return i;
             }

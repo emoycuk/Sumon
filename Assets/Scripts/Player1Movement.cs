@@ -76,7 +76,7 @@ public class Player1Movement : MonoBehaviour
             Respawn();
             isGrounded = false;
         }
-        if (collision.gameObject.CompareTag("Attack"))
+        if (collision.gameObject.CompareTag("Normal Attack"))
         {
             takeDmg(20);  // Adjust damage as needed
                               // Optional: Check if the player is dead and handle accordingly

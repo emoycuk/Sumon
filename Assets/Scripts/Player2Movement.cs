@@ -73,7 +73,7 @@ public class Player2Movement : MonoBehaviour
             Respawn();
             isGrounded = false;
         }
-        if (collision.gameObject.CompareTag("Attack"))
+        if (collision.gameObject.CompareTag("Normal Attack"))
         {
             takeDmg(20);  
 
