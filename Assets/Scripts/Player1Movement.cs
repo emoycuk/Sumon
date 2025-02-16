@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player1Movement : MonoBehaviour
@@ -23,6 +24,8 @@ public class Player1Movement : MonoBehaviour
 
     private bool isInvincible = false;
 
+    public Image playerOrbUI; // Player'ın UI Orb'u göstereceği Image
+    public Sprite joyOrbSprite, angerOrbSprite, sadOrbSprite; // Farklı Orb'ların sprite'ları
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -113,6 +116,7 @@ public class Player1Movement : MonoBehaviour
             {
                 // Update our orb history
                 UpdateOrbHistory(orb.currentOrbType);
+                UpdateOrbUI(orb.currentOrbType);
             }
         }
     }
@@ -161,4 +165,24 @@ public class Player1Movement : MonoBehaviour
     {
         return (hp <= 0);
     }
+
+    private void UpdateOrbUI(Orb.OrbType newOrb)
+{
+    if (playerOrbUI != null)
+    {
+        switch (newOrb)
+        {
+            case Orb.OrbType.Joy:
+                playerOrbUI.sprite = joyOrbSprite;
+                break;
+            case Orb.OrbType.Anger:
+                playerOrbUI.sprite = angerOrbSprite;
+                break;
+            case Orb.OrbType.Sad:
+                playerOrbUI.sprite = sadOrbSprite;
+                break;
+        }
+    }
+}
+
 }
