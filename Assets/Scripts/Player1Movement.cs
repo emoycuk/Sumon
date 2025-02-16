@@ -14,8 +14,8 @@ public class Player1Movement : MonoBehaviour
     public int hp = 100;
     public int deathCount = 0;
 
-    public Orb orb1;
-    public Orb orb2;
+    private Orb.OrbType lastOrb = Orb.OrbType.Joy;        // Default value (choose what you need)
+    private Orb.OrbType secondLastOrb = Orb.OrbType.Joy;
 
     [Header("Respawn Settings")]
     [Tooltip("The Transform where the player should respawn.")]
@@ -101,11 +101,30 @@ public class Player1Movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if we've collided with the DeathZone
         if (other.CompareTag("DeathZone"))
         {
             Respawn();
         }
+        else if (other.CompareTag("SmileOrb") || other.CompareTag("AngerOrb") || other.CompareTag("SadOrb"))
+        {
+            // Get the Orb component
+            Orb orb = other.GetComponent<Orb>();
+            if (orb != null)
+            {
+                // Update our orb history
+                UpdateOrbHistory(orb.currentOrbType);
+            }
+        }
+    }
+
+    private void UpdateOrbHistory(Orb.OrbType newOrb)
+    {
+        // Move the current lastOrb to secondLastOrb
+        secondLastOrb = lastOrb;
+        // The new orb becomes the lastOrb
+        lastOrb = newOrb;
+
+        Debug.Log("1Orbs Updated: Last - " + lastOrb + ", Second Last - " + secondLastOrb);
     }
 
     private void Respawn()
