@@ -13,6 +13,9 @@ TagManager:
   - AngerOrb
   - SadOrb
   - SmileOrb
+  - GameManager
+  - OptionsCanvas
+  - MainMenuCanvas
   layers:
   - Default
   - TransparentFX
@@ -55,6 +58,9 @@ TagManager:
     locked: 0
   - name: New Layer 2
     uniqueID: 516856745
+    locked: 0
+  - name: New Layer 3
+    uniqueID: 1910371203
     locked: 0
   m_RenderingLayers:
   - Default
