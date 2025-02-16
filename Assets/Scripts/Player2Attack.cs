@@ -33,6 +33,8 @@ public class Player2Attack : MonoBehaviour
 
     private void Attack()
     {
+        Orb.OrbType lastOrb = playerMovement.lastOrb;
+        Orb.OrbType secondLastOrb = playerMovement.secondLastOrb;
         // Optionally trigger an animation
         anim.SetTrigger("p2attack");
 
