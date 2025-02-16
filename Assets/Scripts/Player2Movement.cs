@@ -13,6 +13,9 @@ public class Player2Movement : MonoBehaviour
     public int hp = 100;
     public int deathCount = 0;
 
+    public Orb orb1;
+    public Orb orb2;
+
     [Header("Respawn Settings")]
     [Tooltip("The Transform where the player should respawn.")]
     public Transform respawnPoint;

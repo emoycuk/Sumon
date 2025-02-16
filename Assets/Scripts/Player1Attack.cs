@@ -13,6 +13,8 @@ public class Player1Attack : MonoBehaviour
     private Player1Movement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
+
+
     private void Awake()
     {
         anim = GetComponent<Animator>();

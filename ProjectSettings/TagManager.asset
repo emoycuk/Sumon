@@ -10,6 +10,9 @@ TagManager:
   - Player1
   - Player2
   - Attack
+  - AngerOrb
+  - SadOrb
+  - SmileOrb
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2270567569511034235}
   m_Layer: 0
   m_Name: sad
-  m_TagString: Untagged
+  m_TagString: SadOrb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
