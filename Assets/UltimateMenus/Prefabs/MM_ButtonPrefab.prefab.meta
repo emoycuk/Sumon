@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 134d3f563b89e9b4c85ae7828acafa0b
+timeCreated: 1476204244
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71893
+  packageName: UltimateMenus
+  packageVersion: 1.0
+  assetPath: Assets/UltimateMenus/Prefabs/MM_ButtonPrefab.prefab
+  uploadId: 141482

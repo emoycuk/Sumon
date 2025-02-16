@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ce332b1ea3953c2408e9dd82d347834d
+timeCreated: 1476053418
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71893
+  packageName: UltimateMenus
+  packageVersion: 1.0
+  assetPath: Assets/UltimateMenus/DemoScenes/DemoWithPause.unity
+  uploadId: 141482

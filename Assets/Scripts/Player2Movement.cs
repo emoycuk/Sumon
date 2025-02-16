@@ -13,8 +13,8 @@ public class Player2Movement : MonoBehaviour
     public int hp = 100;
     public int deathCount = 0;
 
-    private Orb.OrbType lastOrb = Orb.OrbType.Joy;        // Default value (choose what you need)
-    private Orb.OrbType secondLastOrb = Orb.OrbType.Joy;
+    public Orb.OrbType lastOrb = Orb.OrbType.Joy;        // Default value (choose what you need)
+    public Orb.OrbType secondLastOrb = Orb.OrbType.Joy;
 
     [Header("Respawn Settings")]
     [Tooltip("The Transform where the player should respawn.")]
