@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 8739bca648248c74c89c687226db4322
+timeCreated: 1476149114
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71893
+  packageName: UltimateMenus
+  packageVersion: 1.0
+  assetPath: Assets/UltimateMenus/Scripts/ButtonController_Paused.cs
+  uploadId: 141482

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8e4ebb5602cdaf648bd72f9d3a4c0fc0
+timeCreated: 1476204206
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 71893
+  packageName: UltimateMenus
+  packageVersion: 1.0
+  assetPath: Assets/UltimateMenus/Prefabs/PM_ButtonPrefab.prefab
+  uploadId: 141482
