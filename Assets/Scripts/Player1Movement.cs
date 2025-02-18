@@ -5,9 +5,8 @@ using UnityEngine.UI;
 public class Player1Movement : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;
+    public float moveSpeed = 2f;
     public float jumpForce = 10f;
-    public float timer = 0f;
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
@@ -40,19 +39,6 @@ public class Player1Movement : MonoBehaviour
     void Update()
     {
         float moveInput = 0f;
-
-        if (isSlowed)
-        {
-            moveSpeed = 2f;
-            timer++;
-
-            if (timer > 5)
-            {
-                moveSpeed = 5f;
-                isSlowed = false;
-                timer = 0f;
-            }
-        }
 
         // --- ARROW KEYS ONLY ---
         if (Input.GetKey(KeyCode.A))

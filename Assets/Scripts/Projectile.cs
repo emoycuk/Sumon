@@ -15,6 +15,12 @@ public class Projectile : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     private void Update()
@@ -34,7 +40,6 @@ public class Projectile : MonoBehaviour
     {
         // Ignore certain tags
         if (collision.CompareTag("Ground")) return;
-        if (collision.CompareTag("Attack")) return;
         if (collision.CompareTag("AngerOrb")) return;
         if (collision.CompareTag("SmileOrb")) return;
         if (collision.CompareTag("SadOrb")) return;
@@ -50,7 +55,7 @@ public class Projectile : MonoBehaviour
                 shouldExplode = true;
             }
         }
-        else if (collision.CompareTag("Player2"))
+        if (collision.CompareTag("Player2"))
         {
             Player2Movement player = collision.GetComponent<Player2Movement>();
             if (player != null)
@@ -58,6 +63,18 @@ public class Projectile : MonoBehaviour
                 player.takeDmg(dmg);
                 shouldExplode = true;
             }
+        }
+        if (collision.CompareTag("NormalAttack"))
+        {
+            shouldExplode = true;
+        }
+        if (collision.CompareTag("Slow"))
+        {
+            shouldExplode = true;
+        }
+        if (collision.CompareTag("Invert"))
+        {
+            shouldExplode = true;
         }
 
         // If we should explode, trigger explosion and delay deactivation

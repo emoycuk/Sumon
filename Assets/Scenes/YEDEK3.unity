@@ -1873,7 +1873,7 @@ Transform:
   m_GameObject: {fileID: 211088467}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.74, y: -3.71, z: 0}
+  m_LocalPosition: {x: 5.2, y: -3.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2896,7 +2896,7 @@ Transform:
   m_GameObject: {fileID: 320768915}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.73, y: -0.21, z: 0}
+  m_LocalPosition: {x: 8.2, y: -0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3521,7 +3521,7 @@ Transform:
   m_GameObject: {fileID: 366900790}
   serializedVersion: 2
   m_LocalRotation: {x: 0.008597053, y: -0.16795151, z: -0.0014647506, w: 0.9857567}
-  m_LocalPosition: {x: 4.1371994, y: -1.68, z: 0}
+  m_LocalPosition: {x: 4.1371994, y: -1.54, z: 0}
   m_LocalScale: {x: -2.8539176, y: 0.50999933, z: 0.99634063}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5014,7 +5014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  jumpForce: 12
+  jumpForce: 10
   hp: 100
   deathCount: 0
   lastOrb: 1
@@ -5501,7 +5501,7 @@ Transform:
   m_GameObject: {fileID: 484674420}
   serializedVersion: 2
   m_LocalRotation: {x: 0.008597053, y: -0.16795151, z: -0.0014647506, w: 0.9857567}
-  m_LocalPosition: {x: 5.7849994, y: -3.68, z: 0}
+  m_LocalPosition: {x: 5.21, y: -3.91, z: -0.11}
   m_LocalScale: {x: -2.8811448, y: 0.50999933, z: 0.99634063}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16419,7 +16419,7 @@ Transform:
   m_GameObject: {fileID: 1359661070}
   serializedVersion: 2
   m_LocalRotation: {x: 0.008597053, y: -0.16795151, z: -0.0014647506, w: 0.9857567}
-  m_LocalPosition: {x: 7.8, y: -0.23, z: 0.01}
+  m_LocalPosition: {x: 8.204, y: -0.16, z: 0.148}
   m_LocalScale: {x: -3.9612257, y: 0.50999933, z: 0.99634063}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17806,7 +17806,7 @@ Transform:
   m_GameObject: {fileID: 1555859336}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.68, y: 3.26, z: 0}
+  m_LocalPosition: {x: 8.2, y: 3.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17847,7 +17847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  jumpForce: 12
+  jumpForce: 10
   hp: 100
   deathCount: 0
   lastOrb: 1
@@ -19092,7 +19092,7 @@ Transform:
   m_GameObject: {fileID: 1769609284}
   serializedVersion: 2
   m_LocalRotation: {x: 0.008597053, y: -0.16795151, z: -0.0014647506, w: 0.9857567}
-  m_LocalPosition: {x: 7.8, y: 3.25, z: -0.01}
+  m_LocalPosition: {x: 8.26, y: 3.26, z: 0.15}
   m_LocalScale: {x: -1.9166614, y: 0.50999933, z: 0.99634063}
   m_ConstrainProportionsScale: 0
   m_Children: []
