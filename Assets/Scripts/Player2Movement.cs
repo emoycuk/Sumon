@@ -16,7 +16,7 @@ public class Player2Movement : MonoBehaviour
     public int hp = 100;
     public int deathCount = 0;
 
-    public Orb.OrbType lastOrb = Orb.OrbType.Joy;        // Default value (choose what you need)
+    public Orb.OrbType lastOrb = Orb.OrbType.Joy; 
     public Orb.OrbType secondLastOrb = Orb.OrbType.Joy;
 
     [Header("Respawn Settings")]
@@ -35,7 +35,6 @@ public class Player2Movement : MonoBehaviour
     {
         float moveInput = 0f;
 
-        // --- ARROW KEYS ONLY ---
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             moveInput = -1f;
@@ -47,16 +46,13 @@ public class Player2Movement : MonoBehaviour
             transform.localScale = new Vector2(-0.7f, 0.7f);
         }
 
-        // Apply horizontal velocity
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // Jump with UP arrow if grounded
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        //Set animator params
         anim.SetBool("p2walk", moveInput != 0);
         if (isDead())
         {
@@ -64,7 +60,7 @@ public class Player2Movement : MonoBehaviour
         }
     }
 
-    // BASIC COLLISION CHECKS
+    // COLLISION CHECKS
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -115,11 +111,9 @@ public class Player2Movement : MonoBehaviour
         }
         else if (other.CompareTag("SmileOrb") || other.CompareTag("AngerOrb") || other.CompareTag("SadOrb"))
         {
-            // Get the Orb component
             Orb orb = other.GetComponent<Orb>();
             if (orb != null)
             {
-                // Update our orb history
                 UpdateOrbHistory(orb.currentOrbType);
             }
         }
@@ -127,9 +121,7 @@ public class Player2Movement : MonoBehaviour
 
     private void UpdateOrbHistory(Orb.OrbType newOrb)
     {
-        // Move the current lastOrb to secondLastOrb
         secondLastOrb = lastOrb;
-        // The new orb becomes the lastOrb
         lastOrb = newOrb;
 
         Debug.Log("2Orbs Updated: Last - " + lastOrb + ", Second Last - " + secondLastOrb);
@@ -137,13 +129,10 @@ public class Player2Movement : MonoBehaviour
 
     private void Respawn()
     {
-        // Move the player to the respawn position
         transform.position = respawnPoint.position;
         hp = 100;
         isGrounded = true;
 
-        // Reset health (if desired) when respawning
-        // hp = 100; 
         deathCount++;
     }
 

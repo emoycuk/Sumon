@@ -14,29 +14,22 @@ public class Orb : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger Çalıştı! " + other.name); // **Bu çalışıyor mu kontrol et**
 
         if (other.CompareTag("Player1"))
         {
-            Debug.Log("✅ " + currentOrbType + " Orb alındı!");
-
             StartCoroutine(RespawnOrb());
         }
         if (other.CompareTag("Player2"))
         {
-            Debug.Log("✅ " + currentOrbType + " Orb alındı!");
-
             StartCoroutine(RespawnOrb());
         }
     }
 
     IEnumerator RespawnOrb()
     {
-        Debug.Log("⏳ Orb kayboluyor ve 5 saniye bekliyor...");
-
         // Hide the current orb before respawning
         GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<Collider2D>().enabled = false; // Optional: Disable collision to prevent interactions
+        GetComponent<Collider2D>().enabled = false;
 
         yield return new WaitForSeconds(5f); // Wait for 5 seconds before respawning
 
@@ -54,8 +47,6 @@ public class Orb : MonoBehaviour
             // Set the correct orb type
             Orb newOrbScript = newOrb.GetComponent<Orb>();
             currentOrbType = newOrbScript.currentOrbType;
-
-            Debug.Log("🔄 Yeni Orb şu noktada spawn oldu: " + newSpawnPoint.position + " Type: " + currentOrbType);
 
             // Destroy the old orb (this script is on the old orb)
             Destroy(gameObject);

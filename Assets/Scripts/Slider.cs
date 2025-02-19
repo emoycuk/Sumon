@@ -7,15 +7,13 @@ public class VolumeControl : MonoBehaviour
 
     void Start()
     {
-        // Check if a volume setting exists, otherwise set it to 1
         if (!PlayerPrefs.HasKey("musicVolume"))
         {
             PlayerPrefs.SetFloat("musicVolume", 1f);
         }
+        
+        Load(); 
 
-        Load(); // Load the saved volume and apply it immediately
-
-        // Add a listener to update volume when slider changes
         volumeSlider.onValueChanged.AddListener(delegate { ChangeVolume(); });
     }
 
@@ -28,10 +26,10 @@ public class VolumeControl : MonoBehaviour
     private void Load()
     {
         float savedVolume = PlayerPrefs.GetFloat("musicVolume");
-        AudioListener.volume = savedVolume; // Apply volume globally
+        AudioListener.volume = savedVolume;
         if (volumeSlider != null)
         {
-            volumeSlider.value = savedVolume; // Set slider value if UI is loaded
+            volumeSlider.value = savedVolume;
         }
     }
 

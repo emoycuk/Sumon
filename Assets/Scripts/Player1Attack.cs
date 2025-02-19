@@ -3,10 +3,10 @@ using UnityEngine;
 public class Player1Attack : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float attackCooldown = 1f;  // time between attacks
+    [SerializeField] private float attackCooldown = 1f;
 
     [Header("References")]
-    [SerializeField] private Transform firePoint;        // where the projectile spawns
+    [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject[] fireballs1;
     [SerializeField] private GameObject[] fireballs2;
     [SerializeField] private GameObject[] fireballs3;
@@ -15,7 +15,6 @@ public class Player1Attack : MonoBehaviour
     private Player1Movement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
-    // Declare orb variables as fields
     private Orb.OrbType lastOrb;
     private Orb.OrbType secondLastOrb;
 
@@ -27,7 +26,6 @@ public class Player1Attack : MonoBehaviour
 
     private void Update()
     {
-        // Update orb values each frame
         lastOrb = playerMovement.lastOrb;
         secondLastOrb = playerMovement.secondLastOrb;
 
@@ -41,21 +39,16 @@ public class Player1Attack : MonoBehaviour
 
     private void Attack()
     {
-        // Trigger an animation
         anim.SetTrigger("p1attack");
 
-        // Reset cooldown
         cooldownTimer = 0f;
 
-        // Find an inactive fireball index from the correct array
         int fireballIndex = FindFireball();
         if (fireballIndex < 0)
         {
-            // No available fireball in the pool
             return;
         }
 
-        // Determine which fireball pool to use
         int arrayIndex = FindFireballArray();
         GameObject fireball = null;
         if (arrayIndex == 0)
@@ -72,7 +65,6 @@ public class Player1Attack : MonoBehaviour
         }
         else
         {
-            // Fallback in case no valid pool is determined
             return;
         }
 
@@ -81,7 +73,6 @@ public class Player1Attack : MonoBehaviour
         fireball.transform.position = firePoint.position + Vector3.right * offsetDistance * dir;
         fireball.SetActive(true);
 
-        // Send direction to the projectile (assumes Projectile script handles movement)
         float direction = Mathf.Sign(transform.localScale.x);
         fireball.GetComponent<Projectile>().SetDirection(direction);
     }
@@ -107,8 +98,6 @@ public class Player1Attack : MonoBehaviour
         {
             return 2;
         }
-
-        // Default return value if none of the conditions match
         return 0;
     }
 

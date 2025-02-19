@@ -3436,8 +3436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7948c8adfc8d450d8efa5dcd5991505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oyunudurdumu: 0
-  karartmaPanel: {fileID: 216185482}
+  isPaused: 0
+  darkPanel: {fileID: 0}
 --- !u!1 &366900790
 GameObject:
   m_ObjectHideFlags: 0
@@ -10290,7 +10290,7 @@ GameObject:
   - component: {fileID: 853071517}
   - component: {fileID: 853071516}
   m_Layer: 0
-  m_Name: Yonetici
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10308,8 +10308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7948c8adfc8d450d8efa5dcd5991505, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oyunudurdumu: 1
-  karartmaPanel: {fileID: 216185482}
+  isPaused: 0
+  darkPanel: {fileID: 216185482}
 --- !u!4 &853071517
 Transform:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class Player1Movement : MonoBehaviour
     public int hp = 100;
     public int deathCount = 0;
 
-    public Orb.OrbType lastOrb = Orb.OrbType.Joy;        // Default value (choose what you need)
+    public Orb.OrbType lastOrb = Orb.OrbType.Joy;      
     public Orb.OrbType secondLastOrb = Orb.OrbType.Joy;
 
     [Header("Respawn Settings")]
@@ -27,8 +27,8 @@ public class Player1Movement : MonoBehaviour
 
     private bool isInvincible = false;
 
-    public Image playerOrbUI; // Player'ın UI Orb'u göstereceği Image
-    public Sprite joyOrbSprite, angerOrbSprite, sadOrbSprite; // Farklı Orb'ların sprite'ları
+    public Image playerOrbUI;
+    public Sprite joyOrbSprite, angerOrbSprite, sadOrbSprite;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,8 +39,6 @@ public class Player1Movement : MonoBehaviour
     void Update()
     {
         float moveInput = 0f;
-
-        // --- ARROW KEYS ONLY ---
         if (Input.GetKey(KeyCode.A))
         {
             moveInput = -1f;
@@ -52,16 +50,13 @@ public class Player1Movement : MonoBehaviour
             transform.localScale = new Vector2(0.7f, 0.7f);
         }
 
-        // Apply horizontal velocity
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // Jump with W if grounded
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        //Set animator params
         anim.SetBool("walk", moveInput != 0);
 
         if (isDead())
@@ -70,7 +65,7 @@ public class Player1Movement : MonoBehaviour
         }
     }
 
-    // BASIC COLLISION CHECKS
+    // COLLISION CHECKS
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -84,8 +79,8 @@ public class Player1Movement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Normal Attack"))
         {
-            takeDmg(20);  // Adjust damage as needed
-                              // Optional: Check if the player is dead and handle accordingly
+            takeDmg(20);  
+
             if (isDead())
             {
                 Respawn();
@@ -121,11 +116,9 @@ public class Player1Movement : MonoBehaviour
         }
         else if (other.CompareTag("SmileOrb") || other.CompareTag("AngerOrb") || other.CompareTag("SadOrb"))
         {
-            // Get the Orb component
             Orb orb = other.GetComponent<Orb>();
             if (orb != null)
             {
-                // Update our orb history
                 UpdateOrbHistory(orb.currentOrbType);
                 UpdateOrbUI(orb.currentOrbType);
             }
@@ -134,9 +127,7 @@ public class Player1Movement : MonoBehaviour
 
     private void UpdateOrbHistory(Orb.OrbType newOrb)
     {
-        // Move the current lastOrb to secondLastOrb
         secondLastOrb = lastOrb;
-        // The new orb becomes the lastOrb
         lastOrb = newOrb;
 
         Debug.Log("1Orbs Updated: Last - " + lastOrb + ", Second Last - " + secondLastOrb);
@@ -144,13 +135,9 @@ public class Player1Movement : MonoBehaviour
 
     private void Respawn()
     {
-        // Move the player to the respawn position
         transform.position = respawnPoint.position;
         hp = 100;
         isGrounded = true;
-
-        // Reset health (if desired) when respawning
-        // hp = 100; 
 
         deathCount++;
     }
@@ -178,22 +165,21 @@ public class Player1Movement : MonoBehaviour
     }
 
     private void UpdateOrbUI(Orb.OrbType newOrb)
-{
-    if (playerOrbUI != null)
     {
-        switch (newOrb)
+        if (playerOrbUI != null)
         {
-            case Orb.OrbType.Joy:
-                playerOrbUI.sprite = joyOrbSprite;
-                break;
-            case Orb.OrbType.Anger:
-                playerOrbUI.sprite = angerOrbSprite;
-                break;
-            case Orb.OrbType.Sad:
-                playerOrbUI.sprite = sadOrbSprite;
-                break;
+            switch (newOrb)
+            {
+                case Orb.OrbType.Joy:
+                    playerOrbUI.sprite = joyOrbSprite;
+                    break;
+                case Orb.OrbType.Anger:
+                    playerOrbUI.sprite = angerOrbSprite;
+                    break;
+                case Orb.OrbType.Sad:
+                    playerOrbUI.sprite = sadOrbSprite;
+                    break;
+            }
         }
     }
-}
-
 }

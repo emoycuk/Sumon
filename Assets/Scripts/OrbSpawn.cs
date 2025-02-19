@@ -2,18 +2,16 @@ using UnityEngine;
 
 public class OrbSpawner : MonoBehaviour
 {
-    public GameObject[] orbPrefabs;   // 3 farklı orb prefab
-    public Transform[] spawnPoints;   // Spawn noktaları
+    public GameObject[] orbPrefabs;   // 3 different orb prefabs
+    public Transform[] spawnPoints;   // Spawn points
 
     private void Start()
     {
         if (spawnPoints.Length == 0)
         {
-            Debug.LogError("❌ Spawn noktaları atanmadı!");
             return;
         }
 
-        // (Optional) Force spawn point z=0, in case any Transform is placed at z != 0
         for (int i = 0; i < spawnPoints.Length; i++)
         {
             Vector3 tempPos = spawnPoints[i].position;
@@ -26,8 +24,6 @@ public class OrbSpawner : MonoBehaviour
 
     private void SpawnOrbs(int orbCount)
     {
-        Debug.Log("✅ SpawnOrbs() çağrıldı!");
-
         for (int i = 0; i < orbCount; i++)
         {
             if (spawnPoints.Length == 0) return;
@@ -42,15 +38,11 @@ public class OrbSpawner : MonoBehaviour
             // Instantiate the orb prefab
             GameObject newOrb = Instantiate(orbPrefabs[orbTypeIndex], spawnPoint.position, Quaternion.identity);
 
-            // Force orb's Z position to 0, just in case
             Vector3 fixedPos = newOrb.transform.position;
             fixedPos.z = 0f;
             newOrb.transform.position = fixedPos;
 
-            // Enable the orb
             newOrb.SetActive(true);
-
-            Debug.Log("✅ Yeni Orb spawn oldu: " + newOrb.transform.position);
         }
     }
 
@@ -59,7 +51,6 @@ public class OrbSpawner : MonoBehaviour
     {
         if (spawnPoints.Length == 0)
         {
-            Debug.LogError("❌ Spawn noktaları atanmadı!");
             return null;
         }
         int randomIndex = Random.Range(0, spawnPoints.Length);

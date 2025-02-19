@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance; // Singleton pattern
+    public static AudioManager Instance;
 
     void Awake()
     {
@@ -10,15 +10,18 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Persist across scenes
+
+            // Persist across scenes
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject); // Prevent duplicates
+            Destroy(gameObject);
             return;
         }
 
-        ApplySavedVolume(); // Apply saved volume at game start
+        // Apply saved volume at game start
+        ApplySavedVolume(); 
     }
 
     void ApplySavedVolume()
@@ -26,11 +29,11 @@ public class AudioManager : MonoBehaviour
         if (PlayerPrefs.HasKey("musicVolume"))
         {
             float savedVolume = PlayerPrefs.GetFloat("musicVolume");
-            AudioListener.volume = savedVolume; // Apply saved volume globally
+            AudioListener.volume = savedVolume;
         }
         else
         {
-            PlayerPrefs.SetFloat("musicVolume", 1f); // Default volume
+            PlayerPrefs.SetFloat("musicVolume", 1f);
             PlayerPrefs.Save();
         }
     }
