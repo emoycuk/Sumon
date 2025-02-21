@@ -11,6 +11,7 @@ public class Player1Attack : MonoBehaviour
     [SerializeField] private GameObject[] fireballs2;
     [SerializeField] private GameObject[] fireballs3;
 
+    private Manager manager;
     private Animator anim;
     private Player1Movement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
@@ -21,11 +22,18 @@ public class Player1Attack : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        manager = FindObjectOfType<Manager>();
         playerMovement = GetComponent<Player1Movement>();
     }
 
     private void Update()
     {
+        if (manager.isPaused)
+        {
+            Input.ResetInputAxes();
+            return;
+        }
+
         lastOrb = playerMovement.lastOrb;
         secondLastOrb = playerMovement.secondLastOrb;
 

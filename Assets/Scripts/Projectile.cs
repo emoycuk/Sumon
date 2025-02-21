@@ -77,18 +77,15 @@ public class Projectile : MonoBehaviour
             shouldExplode = true;
         }
 
-        // If we should explode, trigger explosion and delay deactivation
         if (shouldExplode)
         {
             anim.SetTrigger("explode");
             hit = true;
             boxCollider.enabled = false;
-            // Delay deactivation to let explosion animation play (adjust delay as needed)
             Invoke("Deactivate", 0.5f);
         }
         else
         {
-            // For other collisions, deactivate immediately
             hit = true;
             boxCollider.enabled = false;
             Deactivate();

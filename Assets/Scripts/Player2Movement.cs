@@ -12,7 +12,9 @@ public class Player2Movement : MonoBehaviour
     private bool isSlowed = false;
     private bool isInverted = false;
 
+    private Manager manager;
     private Animator anim;
+
     public int hp = 100;
     public int deathCount = 0;
 
@@ -28,11 +30,17 @@ public class Player2Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        manager = FindObjectOfType<Manager>();
         anim = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (manager.isPaused)
+        {
+            return;
+        }
+
         float moveInput = 0f;
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -123,8 +131,6 @@ public class Player2Movement : MonoBehaviour
     {
         secondLastOrb = lastOrb;
         lastOrb = newOrb;
-
-        Debug.Log("2Orbs Updated: Last - " + lastOrb + ", Second Last - " + secondLastOrb);
     }
 
     private void Respawn()

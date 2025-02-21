@@ -13,6 +13,7 @@ public class Player1Movement : MonoBehaviour
     private bool isSlowed = false;
     private bool isInverted = false;
 
+    private Manager manager;
     private Animator anim;
 
     public int hp = 100;
@@ -32,12 +33,17 @@ public class Player1Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //animator
+        manager = FindObjectOfType<Manager>();
         anim = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (manager.isPaused)
+        {
+            return;
+        }
+
         float moveInput = 0f;
         if (Input.GetKey(KeyCode.A))
         {
@@ -64,7 +70,7 @@ public class Player1Movement : MonoBehaviour
             Respawn();
         }
     }
-
+   
     // COLLISION CHECKS
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -3,31 +3,38 @@ using UnityEngine;
 public class Player2Attack : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float attackCooldown = 1f;  // time between attacks
+    [SerializeField] private float attackCooldown = 1f;
 
     [Header("References")]
-    [SerializeField] private Transform firePoint;        // where the projectile spawns
+    [SerializeField] private Transform firePoint;        
     [SerializeField] private GameObject[] fireballs1;
     [SerializeField] private GameObject[] fireballs2;
     [SerializeField] private GameObject[] fireballs3;
 
+    public bool isPaused = false;
+
+    private Manager manager;
     private Animator anim;
     private Player2Movement playerMovement;
     private float cooldownTimer = Mathf.Infinity;
 
-    // Orb variables are now fields so that they’re accessible in all methods.
     private Orb.OrbType lastOrb;
     private Orb.OrbType secondLastOrb;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        manager = FindObjectOfType<Manager>();
         playerMovement = GetComponent<Player2Movement>();
     }
 
     private void Update()
     {
-        // Update orb values each frame
+        if (manager.isPaused)
+        {
+            return;
+        }
+
         lastOrb = playerMovement.lastOrb;
         secondLastOrb = playerMovement.secondLastOrb;
 
@@ -41,23 +48,19 @@ public class Player2Attack : MonoBehaviour
 
     private void Attack()
     {
-        // Trigger animation for Player2 attack
         anim.SetTrigger("p2attack");
-
-        // Reset cooldown
         cooldownTimer = 0f;
 
-        // Find an inactive fireball in the correct pool
         int fireballIndex = FindFireball();
         if (fireballIndex < 0)
         {
-            // No available fireball in the selected pool
             return;
         }
 
-        // Determine which pool to use based on orb combination
         int arrayIndex = FindFireballArray();
+
         GameObject fireball = null;
+
         if (arrayIndex == 0)
         {
             fireball = fireballs1[fireballIndex];
@@ -75,14 +78,12 @@ public class Player2Attack : MonoBehaviour
             return;
         }
 
-        // NOTE: Do NOT change the bullet offset below.
-        float dir = -Mathf.Sign(transform.localScale.x); // Invert direction for player2
+        float dir = -Mathf.Sign(transform.localScale.x);
         float offsetDistance = 0.5f;
         fireball.transform.position = firePoint.position + Vector3.right * offsetDistance * dir;
         fireball.SetActive(true);
 
-        // Send direction to the projectile (assumes Projectile script handles movement)
-        float direction = -Mathf.Sign(transform.localScale.x); // Invert here as well
+        float direction = -Mathf.Sign(transform.localScale.x);
         fireball.GetComponent<Projectile>().SetDirection(direction);
     }
 
@@ -107,7 +108,6 @@ public class Player2Attack : MonoBehaviour
         {
             return 2;
         }
-        // Default to pool 0 if none of the conditions match
         return 0;
     }
 
