@@ -1,9 +1,8 @@
-2D platform tabanlı, fusion temalı oyunumuz. Temel mekaniği elementler arasında geçiş yaparak çeşitli yetenekler kazanabilir ve rakiplerinizi yenmek için çevresel faktörleri kullanabilirsiniz. 
-Unity ile BOA GameJam sırasında geliştirilen bu proje, oyuncu hareketleri, saldırı mekanikleri ve özel orb toplama sistemini içermektedir.
+Our 2D platform based, fusion themed game. By switching between basic mechanics and elements, you can gain various abilities and use environmental factors to defeat your opponents. Developed with Unity during the BOA GameJam, this project includes player movements, attack mechanics and a special orb collection system.
 
-- Oyuncular topladıkları **Orb'lara** göre yetenek kazanır.
-- Çift zıplama, duvara tırmanma gibi dinamik hareketler.
-- Rakiplerine saldırı yapabilir ve düşmanları alt edebilirsin.
-- Pixel art ile özgün sanatsal tasarımlar ve retro oyun hissi.
-- Her elementin kendine özel sesleri ve müzikleri bulunur.
-- Game Over & Menu Sistemi
+Players gain abilities based on the Orbs they collect.
+Dynamic moves such as wall climbing and wall-jumping.
+You can attack your opponents and defeat the enemies.
+Original artistic designs and retro gaming feel with pixel art.
+Each element has its own unique sounds and music.
+Game Over & Menu System
